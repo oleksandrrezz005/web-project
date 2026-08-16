@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна робота №1 - Варіант 0</title>
+</head>
+<body>
+
+    <header>
+        <center><h1>Персональна сторінка студента</h1></center>
+        <hr>
+    </header>
+
+    <table width="100%" border="0" cellpadding="10">
+        valign="top">
+            <td width="25%" valign="top" bgcolor="#f0f0f0">
+                <h3>Меню</h3>
+                <ul>
+                    <li><a href="#text">Оформлений текст</a></li>
+                    <li><a href="#list">Списки</a></li>
+                    <li><a href="#table">Успішність</a></li>
+                    <li><a href="#form">Реєстрація</a></li>
+                </ul>
+                <br>
+                <a href="https://nure.ua/" target="_blank">
+                    <img src="https://nure.ua/wp-content/themes/nure/img/logo-ukr.png" alt="ХНУРЕ" width="200">
+                    <br>Відвідати офіційний сайт ХНУРЕ
+                </a>
+            </td>
+
+            <td width="75%" valign="top">
+                
+                <h2 id="text">Оформлений текст</h2>
+                <p>
+                    <b>Основна тригонометрична тотожність:</b><br>
+                    <i>cos</i>&sup2;&alpha; + <i>sin</i>&sup2;&alpha; = 1
+                </p>
+                <p>
+                    Приклад суворої нерівності: &alpha; &lt; &beta;.<br>
+                    Нестрога нерівність &alpha; &le; &beta; означає, що або &alpha; &lt; &beta;, або &alpha; = &beta;.
+                </p>
+
+                <hr>
+
+                <h2 id="list">Питання та варіанти відповідей</h2>
+                <ol>
+                    <li>Яка мова програмування є низькорівневою?
+                        <ul>
+                            <li>Python</li>
+                            <li>Assembler</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </li>
+                    <li>Який тег використовується для створення таблиць?
+                        <ul>
+                            <li>&lt;list&gt;</li>
+                            <li>&lt;table&gt;</li>
+                            <li>&lt;div&gt;</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <hr>
+
+                <h2 id="table">Успішність студентів 3-го курсу</h2>
+                <table border="1" cellpadding="5" cellspacing="0">
+                    <tr bgcolor="#cccccc">
+                        <th>Прізвище та ім'я</th>
+                        <th>Мережеві технології</th>
+                        <th>Організація баз даних</th>
+                        <th>Веб-програмування</th>
+                    </tr>
+                    <tr>
+                        <td>Іванов Іван</td>
+                        <td>95</td>
+                        <td>88</td>
+                        <td>92</td>
+                    </tr>
+                    <tr>
+                        <td>Петров Петро</td>
+                        <td>74</td>
+                        <td>82</td>
+                        <td>80</td>
+                    </tr>
+                    <tr>
+                        <td>Сидоров Сидір</td>
+                        <td>100</td>
+                        <td>96</td>
+                        <td>98</td>
+                    </tr>
+                </table>
+
+                <hr>
+
+                <h2 id="form">Форма реєстрації відвідувача</h2>
+                <form action="#">
+                    <label for="username">Ім'я користувача:</label><br>
+                    <input type="text" id="username" name="username" required><br><br>
+
+                    <label for="email">Електронна пошта:</label><br>
+                    <input type="email" id="email" name="email" placeholder="example@mail.com"><br><br>
+
+                    <label>Стать:</label><br>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Чоловіча</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Жіноча</label><br><br>
+
+                    <label for="course">Курс навчання:</label><br>
+                    <select id="course" name="course">
+                        <option value="1">1 курс</option>
+                        <option value="2">2 курс</option>
+                        <option value="3" selected>3 курс</option>
+                        <option value="4">4 курс</option>
+                    </select><br><br>
+
+                    <label for="comment">Додаткова інформація:</label><br>
+                    <textarea id="comment" name="comment" rows="4" cols="30"></textarea><br><br>
+
+                    <input type="submit" value="Надіслати">
+                    <input type="reset" value="Очистити">
+                </form>
+
+            </td>
+        </tr>
+    </table>
+
+    <footer>
+        <hr>
+        <center><p>&copy; 2026 Всі права захищені. Виконав студент групи КІУКІ-23-3.</p></center>
+    </footer>
+
+</body>
+</html>
