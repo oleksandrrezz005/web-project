@@ -1,16 +1,16 @@
-/* 1. Селектори тегів та скидання базових відступів */
+/* Базові стилі та чорний фон */
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
-    background-color: #f4f6f9;
-    color: #333;
+    background-color: #121212;
+    color: #e0e0e0;
 }
 
-/* 2. Позиціонування (Вимога 4: relative + absolute) */
+/* 1. Позиціонування (Вимога 4: relative + absolute) */
 .promo-box {
     position: relative;
-    background-color: #ffffff;
-    border: 1px solid #dcdcdc;
+    background-color: #1e1e1e;
+    border: 1px solid #333333;
     padding: 20px;
     margin-bottom: 25px;
     border-radius: 6px;
@@ -20,7 +20,7 @@ body {
     position: absolute;
     top: -10px;
     right: 15px;
-    background-color: #e74c3c;
+    background-color: #e63946;
     color: #ffffff;
     padding: 4px 10px;
     font-size: 12px;
@@ -28,17 +28,21 @@ body {
     border-radius: 4px;
 }
 
-/* 3. Обтікання float (Вимога 5: float + clearfix) */
+/* 2. Обтікання float (Вимога 5: float + clearfix) */
 .float-section {
-    background: #ffffff;
+    background-color: #1e1e1e;
     padding: 15px;
     margin-bottom: 25px;
-    border: 1px solid #dcdcdc;
+    border: 1px solid #333333;
+    border-radius: 6px;
 }
 
 .float-img {
     float: left;
     margin-right: 15px;
+    width: 140px;
+    background-color: #ffffff; /* біла підкладка під логотип, щоб його було чітко видно */
+    padding: 5px;
     border-radius: 4px;
 }
 
@@ -48,47 +52,52 @@ body {
     clear: both;
 }
 
-/* 4. Варіант 0: Вкладки (Tabs) тільки на чистому CSS */
+/* 3. Варіант 0: Вкладки на чистому CSS */
 .tabs-container {
-    background: #ffffff;
-    border: 1px solid #ccc;
-    padding: 15px;
-    max-width: 500px;
+    background-color: #1e1e1e;
+    border: 1px solid #333333;
+    padding: 20px;
+    max-width: 550px;
+    border-radius: 6px;
 }
 
-/* Приховуємо стандартні перемикачі radio */
 .tab-radio {
     display: none;
 }
 
-/* Стилізація кнопок вкладок */
+.tabs-nav {
+    display: flex;
+    gap: 2px;
+}
+
 .tab-label {
     display: inline-block;
     padding: 8px 16px;
     cursor: pointer;
-    background-color: #e9ecef;
-    border: 1px solid #ccc;
-    margin-right: -1px;
+    background-color: #2a2a2a;
+    color: #b0b0b0;
+    border: 1px solid #3d3d3d;
     font-weight: bold;
     user-select: none;
+    transition: background 0.2s, color 0.2s;
 }
 
-/* Стиль активної вкладки (як на зразку у завданні) */
+/* Стиль активної вкладки */
 #tab1:checked ~ .tabs-nav label[for="tab1"],
 #tab2:checked ~ .tabs-nav label[for="tab2"],
 #tab3:checked ~ .tabs-nav label[for="tab3"] {
     background-color: #000000;
     color: #ffffff;
-    border-color: #000000;
+    border-color: #4ea8de;
 }
 
-/* Блоки контенту вкладок (за замовчуванням сховані) */
 .tab-panel {
     display: none;
     padding-top: 15px;
+    border-top: 1px solid #333333;
+    margin-top: -1px;
 }
 
-/* Відображення відповідного контенту при виборі radio */
 #tab1:checked ~ #content1,
 #tab2:checked ~ #content2,
 #tab3:checked ~ #content3 {
