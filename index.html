@@ -2,133 +2,88 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Лабораторна робота №1 - Варіант 0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №2 - Варіант 0</title>
+
+    <!-- Спосіб 1: Підключення зовнішнього CSS-файлу -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Спосіб 2: Внутрішні стилі за допомогою контейнера <style> -->
+    <style>
+        /* Селектор за ідентифікатором (id) */
+        #main-header {
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Селектор за класом (class) */
+        .highlight-text {
+            color: #2980b9;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <h1 style="text-align: center;">Персональна сторінка студента</h1>
-        <hr>
+    <header id="main-header">
+        <h1>Лабораторна робота: Дослідження можливостей CSS</h1>
     </header>
 
-    <table style="width: 100%; border-collapse: collapse;">
-        <tr>
-            <td style="width: 25%; vertical-align: top; background-color: #f0f0f0; padding: 10px;">
-                <h2>Меню</h2>
-                <ul>
-                    <li><a href="#text">Оформлений текст</a></li>
-                    <li><a href="#list">Списки</a></li>
-                    <li><a href="#table">Успішність</a></li>
-                    <li><a href="#form">Реєстрація</a></li>
-                </ul>
-                <br>
-                <a href="https://nure.ua/" target="_blank">
-                    <img src="https://nure.ua/wp-content/themes/nure/img/logo-ukr.png" alt="ХНУРЕ" style="width: 200px;">
-                    <br>Відвідати офіційний сайт ХНУРЕ
-                </a>
-            </td>
+    <!-- Спосіб 3: Inline-стиль (атрибут style) -->
+    <p style="color: #27ae60; font-size: 18px; font-style: italic;">
+        Цей рядок оформлено за допомогою <b>inline-стилю</b> (атрибут style).
+    </p>
 
-            <td style="width: 75%; vertical-align: top; padding: 10px;">
-                
-                <h2 id="text">Оформлений текст</h2>
-                <p>
-                    <b>Основна тригонометрична тотожність:</b><br>
-                    <i>cos</i>&sup2;&alpha; + <i>sin</i>&sup2;&alpha; = 1
-                </p>
-                <p>
-                    Приклад суворої нерівності: &alpha; &lt; &beta;.<br>
-                    Нестрога нерівність &alpha; &le; &beta; означає, що або &alpha; &lt; &beta;, або &alpha; = &beta;.
-                </p>
+    <!-- Демонстрація position (relative/absolute) -->
+    <section class="promo-box">
+        <span class="badge-absolute">Absolute Badge</span>
+        <h2>Демонстрація позиціонування (Position)</h2>
+        <p>Контейнер має <span class="highlight-text">position: relative</span>, а ярлик зверху — <span class="highlight-text">position: absolute</span> зі зміщенням.</p>
+    </section>
 
-                <hr>
+    <!-- Демонстрація властивості float -->
+    <section class="float-section clearfix">
+        <h2>Демонстрація обтікання (Float)</h2>
+        <img src="https://via.placeholder.com/120x80" alt="Зразок" class="float-img">
+        <p>
+            Цей блок тексту демонструє обтікання зображення зліва за допомогою властивості <span class="highlight-text">float: left</span>. Для батьківського контейнера застосовано класичний clearfix, щоб запобігти випаданню плаваючих елементів.
+        </p>
+    </section>
 
-                <h2 id="list">Питання та варіанти відповідей</h2>
-                <ol>
-                    <li>Яка мова програмування є низькорівневою?
-                        <ul>
-                            <li>Python</li>
-                            <li>Assembler</li>
-                            <li>JavaScript</li>
-                        </ul>
-                    </li>
-                    <li>Який тег використовується для створення таблиць?
-                        <ul>
-                            <li>&lt;list&gt;</li>
-                            <li>&lt;table&gt;</li>
-                            <li>&lt;div&gt;</li>
-                        </ul>
-                    </li>
-                </ol>
+    <!-- Варіант 0: Вкладки, що перемикаються без JavaScript -->
+    <section class="tabs-container">
+        <h2>Варіант 0: Вкладки (Tabs)</h2>
 
-                <hr>
+        <!-- Приховані радіокнопки для керування станом -->
+        <input type="radio" name="tab-group" id="tab1" class="tab-radio">
+        <input type="radio" name="tab-group" id="tab2" class="tab-radio" checked>
+        <input type="radio" name="tab-group" id="tab3" class="tab-radio">
 
-                <h2 id="table">Успішність студентів 3-го курсу</h2>
-                <table style="border: 1px solid black; border-collapse: collapse; width: 100%;">
-                    <tr style="background-color: #cccccc;">
-                        <th style="border: 1px solid black; padding: 5px;">Прізвище та ім'я</th>
-                        <th style="border: 1px solid black; padding: 5px;">Мережеві технології</th>
-                        <th style="border: 1px solid black; padding: 5px;">Організація баз даних</th>
-                        <th style="border: 1px solid black; padding: 5px;">Веб-програмування</th>
-                    </tr>
-                    <tr>
-                        <td style="border: 1px solid black; padding: 5px;">Іванов Іван</td>
-                        <td style="border: 1px solid black; padding: 5px;">95</td>
-                        <td style="border: 1px solid black; padding: 5px;">88</td>
-                        <td style="border: 1px solid black; padding: 5px;">92</td>
-                    </tr>
-                    <tr>
-                        <td style="border: 1px solid black; padding: 5px;">Петров Петро</td>
-                        <td style="border: 1px solid black; padding: 5px;">74</td>
-                        <td style="border: 1px solid black; padding: 5px;">82</td>
-                        <td style="border: 1px solid black; padding: 5px;">80</td>
-                    </tr>
-                    <tr>
-                        <td style="border: 1px solid black; padding: 5px;">Сидоров Сидір</td>
-                        <td style="border: 1px solid black; padding: 5px;">100</td>
-                        <td style="border: 1px solid black; padding: 5px;">96</td>
-                        <td style="border: 1px solid black; padding: 5px;">98</td>
-                    </tr>
-                </table>
+        <!-- Навігація по вкладках -->
+        <div class="tabs-nav">
+            <label for="tab1" class="tab-label">Вкладка 1</label>
+            <label for="tab2" class="tab-label">Вкладка 2</label>
+            <label for="tab3" class="tab-label">Вкладка 3</label>
+        </div>
 
-                <hr>
+        <!-- Контентні блоки -->
+        <div id="content1" class="tab-panel">
+            <h3>sample content 1</h3>
+            <p>Вміст першої вкладки. Довільний опис та демонстрація перемикання.</p>
+        </div>
 
-                <h2 id="form">Форма реєстрації відвідувача</h2>
-                <form action="#">
-                    <label for="username">Ім'я користувача:</label><br>
-                    <input type="text" id="username" name="username" required><br><br>
+        <div id="content2" class="tab-panel">
+            <h3>sample content 2</h3>
+            <p>Pellentesque hendrerit, lorem luctus porttitor vestibulum, eros sapien mattis libero, euismod congue neque nisi at ipsum.</p>
+        </div>
 
-                    <label for="email">Електронна пошта:</label><br>
-                    <input type="email" id="email" name="email" placeholder="example@mail.com"><br><br>
-
-                    <label>Стать:</label><br>
-                    <input type="radio" id="male" name="gender" value="male">
-                    <label for="male">Чоловіча</label>
-                    <input type="radio" id="female" name="gender" value="female">
-                    <label for="female">Жіноча</label><br><br>
-
-                    <label for="course">Курс навчання:</label><br>
-                    <select id="course" name="course">
-                        <option value="1">1 курс</option>
-                        <option value="2">2 курс</option>
-                        <option value="3" selected>3 курс</option>
-                        <option value="4">4 курс</option>
-                    </select><br><br>
-
-                    <label for="comment">Додаткова інформація:</label><br>
-                    <textarea id="comment" name="comment" rows="4" cols="30"></textarea><br><br>
-
-                    <input type="submit" value="Надіслати">
-                    <input type="reset" value="Очистити">
-                </form>
-
-            </td>
-        </tr>
-    </table>
-
-    <footer>
-        <hr>
-        <p style="text-align: center;">&copy; 2026 Всі права захищені. Виконав студент групи КІУКІ-23-3.</p>
-    </footer>
+        <div id="content3" class="tab-panel">
+            <h3>sample content 3</h3>
+            <p>Вміст третьої вкладки. Усі вкладки працюють виключно на селекторах CSS без скриптів.</p>
+        </div>
+    </section>
 
 </body>
 </html>
