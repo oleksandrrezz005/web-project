@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>00:00 — Онлайн-таймер</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="timer-card">
+        <h1>Онлайн-таймер</h1>
+        
+        <div class="display-container">
+            <div id="time-display">00:00</div>
+            <div id="status-badge" class="badge">Очікування</div>
+        </div>
+
+        <div class="settings-form">
+            <div class="input-row">
+                <div class="input-group">
+                    <label for="input-minutes">Хвилини:</label>
+                    <input type="number" id="input-minutes" min="0" max="999" value="0">
+                </div>
+                <div class="input-group">
+                    <label for="input-seconds">Секунди:</label>
+                    <input type="number" id="input-seconds" min="0" max="59" value="10">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="notification-text">Текст сповіщення:</label>
+                <input type="text" id="notification-text" value="Час вийшов!">
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="repeat-mode">
+                <label for="repeat-mode">Повторювати циклічно після завершення</label>
+            </div>
+        </div>
+
+        <div class="controls-row">
+            <button id="btn-start" class="btn btn-primary">Старт</button>
+            <button id="btn-pause" class="btn btn-warning" disabled>Пауза</button>
+            <button id="btn-reset" class="btn btn-danger">Скинути</button>
+        </div>
+
+        <div class="info-box">
+            <h3>Підтримка GET-параметрів в URL:</h3>
+            <code>?time=60&repeat=1&autostart=1&msg=Час+на+перерву</code>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
