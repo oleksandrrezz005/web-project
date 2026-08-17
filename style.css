@@ -1,105 +1,104 @@
-/* Базові стилі та чорний фон */
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
     background-color: #121212;
     color: #e0e0e0;
-}
-
-/* 1. Позиціонування (Вимога 4: relative + absolute) */
-.promo-box {
-    position: relative;
-    background-color: #1e1e1e;
-    border: 1px solid #333333;
+    margin: 0;
     padding: 20px;
-    margin-bottom: 25px;
-    border-radius: 6px;
 }
 
-.badge-absolute {
-    position: absolute;
-    top: -10px;
-    right: 15px;
-    background-color: #e63946;
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #1e1e1e;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+h1, h2, h3 {
     color: #ffffff;
-    padding: 4px 10px;
-    font-size: 12px;
-    font-weight: bold;
-    border-radius: 4px;
 }
 
-/* 2. Обтікання float (Вимога 5: float + clearfix) */
-.float-section {
-    background-color: #1e1e1e;
-    padding: 15px;
-    margin-bottom: 25px;
-    border: 1px solid #333333;
-    border-radius: 6px;
-}
-
-.float-img {
-    float: left;
-    margin-right: 15px;
-    width: 140px;
-    background-color: #ffffff; /* біла підкладка під логотип, щоб його було чітко видно */
-    padding: 5px;
-    border-radius: 4px;
-}
-
-.clearfix::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/* 3. Варіант 0: Вкладки на чистому CSS */
-.tabs-container {
-    background-color: #1e1e1e;
-    border: 1px solid #333333;
-    padding: 20px;
-    max-width: 550px;
-    border-radius: 6px;
-}
-
-.tab-radio {
-    display: none;
-}
-
-.tabs-nav {
+.gallery-wrapper {
     display: flex;
-    gap: 2px;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
 }
 
-.tab-label {
-    display: inline-block;
-    padding: 8px 16px;
+.controls-panel {
+    flex: 1;
+    min-width: 280px;
+    background-color: #252525;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.preview-panel {
+    flex: 1.5;
+    min-width: 300px;
+    background-color: #252525;
+    padding: 20px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #bbb;
+}
+
+input, select, button {
+    padding: 8px 12px;
+    background-color: #333;
+    border: 1px solid #555;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+button {
+    margin-top: 10px;
+    width: 100%;
+    background-color: #007acc;
+    border: none;
     cursor: pointer;
-    background-color: #2a2a2a;
-    color: #b0b0b0;
-    border: 1px solid #3d3d3d;
     font-weight: bold;
-    user-select: none;
-    transition: background 0.2s, color 0.2s;
+    transition: background 0.2s;
 }
 
-/* Стиль активної вкладки */
-#tab1:checked ~ .tabs-nav label[for="tab1"],
-#tab2:checked ~ .tabs-nav label[for="tab2"],
-#tab3:checked ~ .tabs-nav label[for="tab3"] {
-    background-color: #000000;
-    color: #ffffff;
-    border-color: #4ea8de;
+button:hover {
+    background-color: #005999;
 }
 
-.tab-panel {
-    display: none;
-    padding-top: 15px;
-    border-top: 1px solid #333333;
-    margin-top: -1px;
+.image-box {
+    margin-top: 15px;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a1a1a;
+    border-radius: 4px;
+    padding: 10px;
 }
 
-#tab1:checked ~ #content1,
-#tab2:checked ~ #content2,
-#tab3:checked ~ #content3 {
-    display: block;
+#main-image {
+    width: 300px;
+    height: 200px;
+    border: 2px solid #007acc;
+    object-fit: cover;
+    transition: all 0.2s ease;
+}
+
+#info-text {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #888;
 }

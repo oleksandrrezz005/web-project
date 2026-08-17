@@ -3,87 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лабораторна робота №2 - Варіант 0</title>
-
-    <!-- Спосіб 1: Підключення зовнішнього CSS-файлу -->
+    <title>Лабораторна робота №3 - Варіант 0</title>
     <link rel="stylesheet" href="style.css">
-
-    <!-- Спосіб 2: Внутрішні стилі за допомогою контейнера <style> -->
-    <style>
-        /* Селектор за ідентифікатором (id) */
-        #main-header {
-            text-align: center;
-            border-bottom: 2px solid #333333;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-
-        /* Селектор за класом (class) */
-        .highlight-text {
-            color: #4ea8de;
-            font-weight: bold;
-        }
-    </style>
 </head>
 <body>
 
-    <header id="main-header">
-        <h1>Лабораторна робота: Дослідження можливостей CSS</h1>
-    </header>
+    <div class="container">
+        <h1>Лабораторна робота №3: Основи JavaScript</h1>
+        <h2>Варіант 0: Динамічна галерея зображень</h2>
 
-    <!-- Спосіб 3: Inline-стиль (атрибут style) -->
-    <p style="color: #2ec4b6; font-size: 18px; font-style: italic;">
-        Цей рядок оформлено за допомогою <b>inline-стилю</b> (атрибут style).
-    </p>
+        <div class="gallery-wrapper">
+            <!-- Панель керування -->
+            <div class="controls-panel">
+                <h3>1. Виберіть зображення</h3>
+                <select id="image-select">
+                    <option value="images/1.jpg" selected>Зображення 1</option>
+                    <option value="images/2.jpg">Зображення 2</option>
+                    <option value="images/3.jpg">Зображення 3</option>
+                    <option value="images/4.jpg">Зображення 4</option>
+                </select>
 
-    <!-- Демонстрація position (relative/absolute) -->
-    <section class="promo-box">
-        <span class="badge-absolute">Absolute Badge</span>
-        <h2>Демонстрація позиціонування (Position)</h2>
-        <p>Контейнер має <span class="highlight-text">position: relative</span>, а ярлик зверху — <span class="highlight-text">position: absolute</span> зі зміщенням.</p>
-    </section>
+                <h3>2. Параметри зображення</h3>
+                
+                <div class="input-group">
+                    <label for="img-width">Ширина (px):</label>
+                    <input type="number" id="img-width" value="300" min="50" max="800">
+                </div>
 
-    <!-- Демонстрація властивості float з робочим зображенням -->
-    <section class="float-section clearfix">
-        <h2>Демонстрація обтікання (Float)</h2>
-       <img src="logo.jpg" alt="ХНУРЕ" class="float-img">
-        <p>
-            Цей блок тексту демонструє обтікання зображення зліва за допомогою властивості <span class="highlight-text">float: left</span>. Для батьківського контейнера застосовано класичний clearfix, щоб запобігти випаданню плаваючих елементів.
-        </p>
-    </section>
+                <div class="input-group">
+                    <label for="img-height">Висота (px):</label>
+                    <input type="number" id="img-height" value="200" min="50" max="800">
+                </div>
 
-    <!-- Варіант 0: Вкладки, що перемикаються без JavaScript -->
-    <section class="tabs-container">
-        <h2>Варіант 0: Вкладки (Tabs)</h2>
+                <div class="input-group">
+                    <label for="img-border">Товщина рамки (px):</label>
+                    <input type="number" id="img-border" value="2" min="0" max="20">
+                </div>
 
-        <!-- Приховані радіокнопки для керування станом -->
-        <input type="radio" name="tab-group" id="tab1" class="tab-radio">
-        <input type="radio" name="tab-group" id="tab2" class="tab-radio" checked>
-        <input type="radio" name="tab-group" id="tab3" class="tab-radio">
+                <div class="input-group">
+                    <label for="img-alt">Альтернативний текст (alt):</label>
+                    <input type="text" id="img-alt" value="Опис першого зображення">
+                </div>
 
-        <!-- Навігація по вкладках -->
-        <div class="tabs-nav">
-            <label for="tab1" class="tab-label">Вкладка 1</label>
-            <label for="tab2" class="tab-label">Вкладка 2</label>
-            <label for="tab3" class="tab-label">Вкладка 3</label>
+                <button id="apply-btn">Застосувати параметри</button>
+            </div>
+
+            <!-- Область перегляду -->
+            <div class="preview-panel">
+                <h3>Попередній перегляд:</h3>
+                <div class="image-box">
+                    <img id="main-image" src="images/1.jpg" alt="Опис першого зображення">
+                </div>
+                <p id="info-text">Поточний alt: <i>Опис першого зображення</i></p>
+            </div>
         </div>
+    </div>
 
-        <!-- Контентні блоки -->
-        <div id="content1" class="tab-panel">
-            <h3>sample content 1</h3>
-            <p>Вміст першої вкладки. Довільний опис та демонстрація перемикання.</p>
-        </div>
-
-        <div id="content2" class="tab-panel">
-            <h3>sample content 2</h3>
-            <p>Pellentesque hendrerit, lorem luctus porttitor vestibulum, eros sapien mattis libero, euismod congue neque nisi at ipsum.</p>
-        </div>
-
-        <div id="content3" class="tab-panel">
-            <h3>sample content 3</h3>
-            <p>Вміст третьої вкладки. Усі вкладки працюють виключно на селекторах CSS без скриптів.</p>
-        </div>
-    </section>
-
+    <script src="script.js"></script>
 </body>
 </html>
